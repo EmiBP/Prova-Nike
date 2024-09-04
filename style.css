@@ -1,0 +1,359 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.sec2Main::-webkit-scrollbar,
+.sec3Main::-webkit-scrollbar,
+.sec4Main::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	width: 10px; /* width of the entire scrollbar */
+	height: 10px;
+}
+.sec2Main::-webkit-scrollbar-track,
+.sec3Main::-webkit-scrollbar-track,
+.sec4Main::-webkit-scrollbar-track,
+body::-webkit-scrollbar {
+	background: rgb(6, 26, 137); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb,
+.sec2Main::-webkit-scrollbar-thumb,
+.sec3Main::-webkit-scrollbar-thumb,
+.sec4Main::-webkit-scrollbar-thumb {
+	background-color: rgb(249, 249, 250); /* color of the scroll thumb */
+	border: 3px solid orange; /* creates padding around scroll thumb */
+}
+/* Header*/
+
+/* menu Header e Main*/
+#boxHeader,
+#boxMain {
+	margin: 0 auto;
+	width: 95%;
+}
+
+/* Menu 1*/
+
+section.menu1Header {
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+	padding: 12px 0;
+	font-weight: 500;
+	display: block;
+	font-size: 11px;
+	background-color: rgb(229, 225, 220);
+}
+
+section.menu1Header nav {
+	float: right;
+}
+
+section.menu1Header nav ul li {
+	padding: 1px 5px;
+	display: inline;
+}
+
+section.menu1Header ul li:nth-child(n + 2) {
+	border-left: solid rgb(50, 47, 47) 2px;
+}
+
+/* Menu 2*/
+
+.menu2header {
+	overflow: auto;
+	width: 100%;
+	height: auto;
+}
+
+/* menu 2 img sinistra*/
+#img1Header {
+	padding: 8px 0;
+}
+
+#img1Header img {
+	width: 16.8%;
+	height: auto;
+}
+
+#img1Header,
+#menu2BoxDestra {
+	float: left;
+	width: calc((100% / 3) - 15px);
+	max-height: 50px;
+}
+
+#boxImgDestra {
+	width: 16%;
+	display: inline;
+}
+
+/* menu2 central*/
+
+.boxNav {
+	padding: 9px 0;
+	float: left;
+	width: calc((100% / 3) + 30px);
+	height: auto;
+
+	text-align: center;
+	margin: 0 auto;
+	height: 60px;
+	height: auto;
+}
+
+.menu2header ul {
+	display: block;
+}
+
+.menu2header ul li {
+	padding: 14px 3px;
+	display: inline-block;
+	font-size: 13px;
+}
+
+/*menu2 box destra ricerca bag*/
+
+/* box Ricerca*/
+#menu2BoxDestra {
+	float: right;
+	padding: 10px 0 10px 10px;
+	overflow: hidden;
+}
+
+#boxRicerca {
+	margin-left: 35%;
+	padding: 2px 0px;
+	border: solid black 1px;
+	border: transparent;
+	border-radius: 100px;
+	background-color: rgb(229, 225, 220);
+	width: 140px;
+	height: auto;
+	float: left;
+}
+#boxRicerca img {
+	position: relative;
+	top: 6px;
+	left: 6px;
+	margin: 5px;
+}
+#textRicerca {
+	overflow: hidden;
+	width: 70%;
+	height: 30px;
+	text-align: center;
+	font-size: 15px;
+	outline: none;
+	background-color: transparent;
+	border: transparent;
+}
+
+/* box Bag Cuore*/
+#boxBagImg {
+	margin: 10px 0;
+	float: right;
+	width: 17%;
+	height: 20px;
+}
+
+#boxBagImg img {
+	float: left;
+	margin: 0 4px;
+}
+/* menu2 img destra* tutte 3*/
+
+.menu2header div#menu2BoxDestra img {
+	width: 15px;
+	height: auto;
+}
+
+.menu2header ul li:hover {
+	color: tomato;
+}
+
+/* Memnu 3*/
+
+.menu3Header {
+	width: 100%;
+	height: 60px;
+	background-color: rgb(229, 225, 220);
+	clear: both;
+}
+
+.menu3Header span {
+	text-align: center;
+	font-size: 13px;
+	width: 100%;
+	padding: 5px 0;
+	height: calc(100% / 2);
+	display: block;
+	background-color: rgb(229, 225, 220);
+}
+
+#ancora {
+	text-decoration: none;
+	color: inherit;
+}
+
+#ancora:hover {
+	color: tomato;
+}
+
+/*--------------------- MAIN-------------- */
+
+.sec2Main,
+.sec3Main,
+.sec4Main {
+	background-color: rgb(229, 225, 220);
+	width: 100%;
+	overflow-x: scroll;
+}
+
+.boxSeta h2,
+.boxSeta h2,
+.boxSeta h2 {
+	margin-left: 20px;
+	line-height: 60px;
+	height: 40px;
+	font-size: 18px;
+}
+
+.box {
+	display: flex;
+	min-width: 1400px;
+}
+
+.boxScarpa img,
+.boxSport img,
+.boxMemberShip img {
+	width: 100%;
+	height: auto;
+}
+
+.sec2Main .boxScarpa,
+.sec3Main .boxSport,
+.sec4Main .boxMemberShip {
+	min-width: 380px;
+	width: calc(100% / 6);
+	padding: 3px;
+}
+.boxInfoScarpi {
+	font-size: 9.9px;
+	padding: 10px 0;
+	color: black;
+}
+
+#boxMain1 h3,
+.boxInfoScarpi h3 {
+	font-size: 12px;
+	font-weight: 800;
+}
+
+#boxMain1 p,
+.boxInfoScarpi p {
+	padding: 10px 0;
+	font-size: 9px;
+	
+	color: rgb(4, 4, 4);
+	font-weight: 600;
+}
+
+#boxMain1 > a,
+.ancoraMembership {
+	color: rgb(42, 40, 40);
+	padding: 5px;
+	background-color: aliceblue;
+	border-radius: 300px;
+	font-size: 9px;
+	font-weight: 800;
+}
+
+/* Sec 1 Main */
+
+.sec1Main {
+	background-image: url(/Home-page/hero-banner.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat no-repeat;
+	width: 100%;
+	min-height: 400px;
+	position: relative;
+}
+.sec1Main > #boxMain1 {
+	font-size: 16px;
+	width: 28%;
+	height: auto;
+	position: relative;
+	top: 300px;
+	padding-left: 15px;
+}
+
+/* Box Main 2 */
+
+.sec2Main h2:nth-child(2) {
+	font-weight: 100;
+}
+
+/* Box Main 3 */
+
+.sec3Main span {
+	font-size: 11px;
+	font-weight: 600;
+}
+
+/* Box Main 4 */
+.sec4Main .boxMemberShip {
+	max-height: 400px;
+}
+.align {
+	position: relative;
+	bottom: 100px;
+	padding-left: 15px;
+}
+
+.boxInfoScarpi p {
+	padding: 2px 0px;
+}
+
+.align h3 {
+	padding-bottom: 20px;
+}
+.align p,
+.align h3 {
+	font-weight: 200;
+	color: aliceblue;
+}
+
+/*Seta destra e sinistra*/
+
+.boxSeta {
+	display: flex;
+	margin-top: 30px;
+}
+.boxSeta h2 {
+	width: 95%;
+	min-height: 60px;
+}
+
+.boxSeta img {
+	width: 100%;
+}
+
+.button_sinistraSeta,
+.button_destraSeta,
+.button_sinistraSeta2,
+.button_destraSeta2,
+.button_sinistraSeta3,
+.button_destraSeta3 {
+	background-color: transparent;
+	width: 2.5%;
+	border: transparent;
+}
+
+
