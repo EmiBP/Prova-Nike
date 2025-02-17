@@ -6,6 +6,9 @@ window.addEventListener('load', function() {
 	initSliders(scrollContainer_sec4, btn1_sec4, btn2_sec4);
 	
 	acessShoes(prodottiScarpi, containerScarpi)
+	updateButtonColor(scrollContainer_sec2, btn2_sec2, btn1_sec2);
+	updateButtonColor(scrollContainer_sec3, btn2_sec3, btn1_sec3);
+	updateButtonColor(scrollContainer_sec4, btn2_sec4, btn1_sec4);
 })
 
 // SLIDER FUNCTION
@@ -30,16 +33,29 @@ const btn2_sec4 = document.querySelector(".button_destraSeta3");
 // const btn1_pag2 = document.getElementById("btn1_pag2");
 // const btn2_pag2 = document.getElementById("btn2_pag2");
 
+function updateButtonColor(container, button1,button2) {
+    let maxScroll = container.scrollWidth - container.clientWidth;
+	button1.addEventListener
 
+    container.addEventListener("scroll", () => {
+		if (container.scrollLeft >= maxScroll) {
+            button1.style.backgroundColor = "rgba(194, 194, 194, 0.8)"; 
+			
+		} else {
+			button1.style.backgroundColor = "#626264";
+			
+        }
+
+		
+
+
+    });
+    
+}
 
 function initSliders(x, a, b) {
 	
-	x.addEventListener("wheel", (evt) => { 
-		evt.preventDefault();
-		x.scrollLeft += evt.deltaY;
-		x.style.scrollBehavior = "smooth";
 	
-	});
 
 	a.addEventListener("click", event =>{
 
@@ -57,6 +73,8 @@ function initSliders(x, a, b) {
 
 	
 	});
+
+	
 	
 
 }

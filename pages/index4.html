@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style4.css" />
-		<script src="main3.js" defer></script>
+		<link rel="stylesheet" href="/css/style4.css" />
+
+		<script src="/js/main3.js" defer></script>
 
 		<title>Document</title>
 	</head>
@@ -25,19 +26,19 @@
 					<section class="sec2">
 						<h3 class="misura_text">Carrello</h3>
 						<div class="box1">
-							<img id="img_scarpa" src="Scarpa_2/1.jpg" alt="" />
+							<img id="img_scarpa" src="/assets/img/Scarpa_2/1.jpg" alt="" />
 							<p>Ritiro gratuito</p>
 							<a href="#">Trova un negozio</a>
 						</div>
 						<div class="box2">
-							<h2 class="nome_prodottoPag4">Nike Dunk Low</h2>
-							<span>Scarpa-Donna</span>
+							<h2 class="nome_prodottoPag4" id="nome_prodotto"></h2>
+							<span id="generoProdotto">Scarpa-Donna</span>
 							<span>Bianco/Nero</span>
 
 							<div class="box_size">
 								<label for="size-select">Taglia/misura</label>
 								<select name="size" id="size-select">
-									<option value=""></option>
+									<option id="tagliaScelta tagliaSceltaVuota" value=""></option>
 									<option value="36">36</option>
 									<option value="37">37</option>
 									<option value="38">38</option>
@@ -58,15 +59,15 @@
 							</div>
 							<div class="box_img">
 								<div id="cuore">
-									<img src="icon/heart.svg" />
+									<img src="/assets/icon/heart.svg" />
 								</div>
 								<div id="trash">
-									<img src="icon/shopping-basket.svg" />
+									<img src="/assets/icon/shopping-basket.svg" />
 								</div>
 							</div>
 						</div>
 						<div class="box3">
-							<span class="prezzo">119,90</span>
+							<span class="prezzo" id="prezzoProdotto">119,90</span>
 						</div>
 
 						<div class="box4"></div>
@@ -96,7 +97,7 @@
 					<section class="sec5">
 						<button id="neroButton"><span>Vai al pagamento</span></button>
 						<button id="whiteButton">
-							<img src="icon/paypal.svg" alt="" />
+							<img src="/assets/icon/paypal.svg" alt="" />
 						</button>
 					</section>
 				</div>

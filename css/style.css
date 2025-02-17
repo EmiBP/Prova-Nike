@@ -11,22 +11,17 @@
 .sec3Main::-webkit-scrollbar,
 .sec4Main::-webkit-scrollbar,
 body::-webkit-scrollbar {
-	width: 10px; /* width of the entire scrollbar */
+	width: 10px; 
 	height: 10px;
 }
-.sec2Main::-webkit-scrollbar-track,
-.sec3Main::-webkit-scrollbar-track,
-.sec4Main::-webkit-scrollbar-track,
-body::-webkit-scrollbar {
-	background: rgb(6, 26, 137); /* color of the tracking area */
-}
+
 
 body::-webkit-scrollbar-thumb,
 .sec2Main::-webkit-scrollbar-thumb,
 .sec3Main::-webkit-scrollbar-thumb,
 .sec4Main::-webkit-scrollbar-thumb {
-	background-color: rgb(249, 249, 250); /* color of the scroll thumb */
-	border: 3px solid orange; /* creates padding around scroll thumb */
+	background-color: #626264; 
+	border: 3px solid #626264;
 }
 /* Header*/
 
@@ -277,7 +272,7 @@ section.menu1Header ul li:nth-child(n + 2) {
 /* Sec 1 Main */
 
 .sec1Main {
-	background-image: url(/Home-page/hero-banner.jpg);
+	background-image: url(/assets/img/Home-page/hero-banner.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat no-repeat;
@@ -332,17 +327,19 @@ section.menu1Header ul li:nth-child(n + 2) {
 
 /*Seta destra e sinistra*/
 
-.boxSeta {
-	display: flex;
+.boxMenu_seta {
+
 	margin-top: 30px;
+	display: flex;
 }
-.boxSeta h2 {
-	width: 95%;
+.boxMenu_seta h2 {
+	width: 100%;
 	min-height: 60px;
 }
 
-.boxSeta img {
-	width: 100%;
+.boxMenu_seta img {
+	width: 35px;
+	display: flex;
 }
 
 .button_sinistraSeta,
@@ -351,9 +348,26 @@ section.menu1Header ul li:nth-child(n + 2) {
 .button_destraSeta2,
 .button_sinistraSeta3,
 .button_destraSeta3 {
-	background-color: transparent;
-	width: 2.5%;
+	
+	background-color: #626264;
+	width: 40px;
+	height: 40px;
+
+	display: flex;
+	justify-content: center;
 	border: transparent;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.boxSeta  {
+	display: flex;
+	
+	gap: 5px;
+	
+
 }
 
 

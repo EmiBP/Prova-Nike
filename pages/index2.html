@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/style2.css" />
+		<link rel="stylesheet" href="/css/style3.css" />
+		<link rel="stylesheet" href="/css/style4.css" />
+		<script src="/js/main2.js" defer></script>
+	
+
+		<title>Pag2</title>
+	</head>
+	<body>
+		<header>
+			<div id="boxHeader">
+				<section class="menu1Header">
+					<nav>
+						<ul>
+							<li>Trova un negozio</li>
+							<li>Aiuto</li>
+							<li>Unisciti a noi</li>
+							<li>Accedi</li>
+						</ul>
+					</nav>
+				</section>
+				<section class="menu2header">
+					<div id="img1Header">
+						<img
+							id="logo1"
+							src="logo.png"
+							alt="logomarca"
+							width="500"
+							height="236"
+						/>
+					</div>
+
+					<nav class="boxNav">
+						<ul>
+							<li>Novità e in evidenza</li>
+							<li>Uomo</li>
+							<li>Donna</li>
+							<li>Bambini</li>
+							<li>Outlet</li>
+						</ul>
+					</nav>
+
+					<div id="menu2BoxDestra">
+						<div id="boxRicerca">
+							<img src="assets/icon/search.svg" />
+							<input type="text" id="textRicerca" placeholder="Cerca" />
+						</div>
+						<div id="boxBagImg">
+							<img src="assets/icon/heart.svg" />
+							<img src="assets/icon/shopping-bag.svg" />
+						</div>
+					</div>
+				</section>
+				<section class="menu3Header">
+					<span> -20% sui set in fleece</span>
+					<span>
+						Maglie e pantaloni in fleece: usa FLEECE23 su modelli selezionati.*
+						Fino al 21/12 ore 9 CET.
+						<a id="ancora" href="#">Acquisita *Termini promo</a>
+					</span>
+				</section>
+			</div>
+		</header>
+
+		<main>
+			<div id="container_Main">
+				<section class="main_box1">
+					<li><img src="/assets/img/Scarpa_2/1.jpg" alt="scarpa" /></li>
+					<li><img src="/assets/img/Scarpa_2/2.jpg" alt="scarpa" /></li>
+					<li><img src="/assets/img/Scarpa_2/3.jpg" alt="scarpa" /></li>
+					<li><img src="/assets/img/Scarpa_2/4.jpg" alt="scarpa" /></li>
+					<li><img src="/assets/img/Scarpa_2/5.jpg" alt="scarpa" /></li>
+					<li><img src="/assets/img/Scarpa_2/6.jpg" alt="scarpa" /></li>
+				</section>
+				<section class="main_box2">
+					<img src="/assets/img/Scarpa/2.jpg" alt="" />
+				</section>
+				<section class="main_box3">
+					<div id="boxInfo1">
+						<h1 id="nome_prodotto" class="font">Nike Dunk</h1>
+						<h2 id="genero" class="font">Scarpa-Uomo</h2>
+						<span id="prezzoSite">119,90</span>
+					</div>
+					<div id="boxInfo2">
+						<div id="boxInfo2_box1">
+							<span class="boxInfo2_span">Seleziona la taglia/misura</span>
+							<span class="boxInfo2_span colorLink"
+								>Guida alle taglie e alle misure</span
+							>
+						</div>
+
+						<div id="boxInfo2_taglie">
+							<button class="taglie_button" value="38.5"><span>EU 38.5</span></button>
+							<button class="taglie_button" value="39"><span>EU 39</span></button>
+							<button class="taglie_button" value="40"><span>EU 40</span></button>
+							<button class="taglie_button" value="40.5"><span>EU 40.5</span></button>
+							<button class="taglie_button" value="41"><span>EU 41</span></button>
+							<button class="taglie_button" value="42"><span>EU 42</span></button>
+							<button class="taglie_button" value="42.5"><span>EU 42.5</span></button>
+							<button class="taglie_button" value="43"><span>EU 43</span></button>
+							<button class="taglie_button" value="44"><span>EU 44</span></button>
+							<button class="taglie_button" value="44.5"><span>EU 44.5</span></button>
+							<button class="taglie_button" value="45"><span>EU 45</span></button>
+							<button class="taglie_button" value="45.5"><span>EU 45.5</span></button>
+							<button class="taglie_button" value="46"><span>EU 46</span></button>
+							<button class="taglie_button" value="47"><span>EU 47</span></button>
+							<button class="taglie_button" value="47.5"><span>EU 47.5</span></button>
+							<button class="taglie_button" value="48.5"><span>EU 48.5</span></button>
+							<button class="taglie_button" value="49.5"><span>EU 49.5</span></button>
+						</div>
+						<div class="box_quantita">
+							<label for="quantita-select">Quantità</label>
+							<select name="quantita" id="quantita-select">
+								<option value=""></option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+						</div>
+						<input type="hidden" name="tagliaScelta">
+						<div id="tagliaSelected">hai scelto la taglia: <span id="tagliaScelta"></span></div> 
+						<div id="alert_container">devi sceliere la taglia </div>
+
+						<div id="container_taglie">
+							<button class="buttonAddCarello buttonBuy color">
+								<span>Aggiungi al carello</span>
+							</button>
+							<button class="buttonBuy">
+								<span>Aggiungi ai preferiti &#9825;</span>
+								<span id="dadoRecuperado"></span>
+							</button>
+						</div>
+					</div>
+					<div class="container">
+						<div class="container_boxCarrello">
+							<div class="box-1">
+								<img class="box-img1" src="/assets/icon/icons8-checkmark.svg" alt="" />
+								<span id="addCarrello">Aggiunto al carrello </span>
+								<img class="box-img2" src="/assets/icon/icons8-delete.svg" alt="" />
+							</div>
+							<img class="box-img3 left" src="/assets/img/Scarpa_2/3.jpg" alt="" />
+							<div class="box-2 diviso2 right">
+								<h3 id="prodotto">Scarpa Nike Air Max Dn</h3>
+								<span>Taglia/Misura</span>
+								<span id="tagliaSceltaResponse">eu 34</span>
+								<span id="prezzo">150,00</span>
+							</div>
+							<div class="box-3 pulire">
+								<button>Visualizza carrello (<span></span>)</button>
+								<button><span>Pagamento</span></button>
+							</div>
+						</div>
+					</div>
+					
+				</section>
+				
+			</div>
+			
+		</main>
+	</body>
+</html>
