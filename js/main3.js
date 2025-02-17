@@ -1,12 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
+import { redirectPag } from "/js/utils.js";
 // REDIRECIONAMENTO DA PAGINA 4 PARA A 5
 
-// import { addDattiCarrello } from "/js/main2.js";
-
-
 window.addEventListener('load', function() {
-    redirectForPayment();
+
     //nome, tamanho, genero ,quantidade ,prezzo
     let map = JSON.parse(localStorage.getItem("item"));
     this.document.getElementById("nome_prodotto").textContent = map.nome;
@@ -17,8 +14,6 @@ window.addEventListener('load', function() {
     
    console.log(map);
    
-    
-    
 })
 
 
@@ -26,21 +21,21 @@ window.addEventListener('load', function() {
 
 const buttonGoPayment = document.getElementById("neroButton");
 
-function redirectForPayment() {
-   
-    buttonGoPayment.addEventListener("click", event => {
-        setTimeout(function() {
-            window.location.href = "index5.html";
+buttonGoPayment.addEventListener('click', event =>{
+    redirectPag("index5.html");
+})
 
-        }, 1000);
-    })   
-    buttonGoPayment.addEventListener("mouseover", event => {
-        buttonGoPayment.style.cursor ="pointer";
 
-    }) 
 
+
+function addDattiCarrello(_nome, _tamanho, _genero ,_quantidade ,_prezzo ) {   
+    let map = {};
+    map.nome = _nome;
+    map.tamanho = _tamanho;
+    map.genero = _genero;
+    map.quantidade = _quantidade;
+    map.prezzo = _prezzo;
+
+    localStorage.setItem("item", JSON.stringify(map));  
 }
-
-
-
 

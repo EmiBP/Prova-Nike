@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="/css/style2.css" />
 		<link rel="stylesheet" href="/css/style3.css" />
 		<link rel="stylesheet" href="/css/style4.css" />
-		<script src="/js/main2.js" defer></script>
+		<script type="module" src="/js/main2.js"></script>
 	
 
 		<title>Pag2</title>
@@ -96,44 +96,24 @@
 						</div>
 
 						<div id="boxInfo2_taglie">
-							<button class="taglie_button" value="38.5"><span>EU 38.5</span></button>
-							<button class="taglie_button" value="39"><span>EU 39</span></button>
-							<button class="taglie_button" value="40"><span>EU 40</span></button>
-							<button class="taglie_button" value="40.5"><span>EU 40.5</span></button>
-							<button class="taglie_button" value="41"><span>EU 41</span></button>
-							<button class="taglie_button" value="42"><span>EU 42</span></button>
-							<button class="taglie_button" value="42.5"><span>EU 42.5</span></button>
-							<button class="taglie_button" value="43"><span>EU 43</span></button>
-							<button class="taglie_button" value="44"><span>EU 44</span></button>
-							<button class="taglie_button" value="44.5"><span>EU 44.5</span></button>
-							<button class="taglie_button" value="45"><span>EU 45</span></button>
-							<button class="taglie_button" value="45.5"><span>EU 45.5</span></button>
-							<button class="taglie_button" value="46"><span>EU 46</span></button>
-							<button class="taglie_button" value="47"><span>EU 47</span></button>
-							<button class="taglie_button" value="47.5"><span>EU 47.5</span></button>
-							<button class="taglie_button" value="48.5"><span>EU 48.5</span></button>
-							<button class="taglie_button" value="49.5"><span>EU 49.5</span></button>
+							<!-- aqui estou incluido os numeros dos sapatos -->
+							<!-- <button class="taglie_button" value="${num}"><span>${num}</span></button> -->
 						</div>
 						<div class="box_quantita">
-							<label for="quantita-select">Quantità</label>
+							<label for="quantita-select" >Quantità</label>
 							<select name="quantita" id="quantita-select">
 								<option value=""></option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
 							</select>
 						</div>
-						<input type="hidden" name="tagliaScelta">
-						<div id="tagliaSelected">hai scelto la taglia: <span id="tagliaScelta"></span></div> 
+
+						<div id="tagliaSelected">hai scelto la taglia:<span id="tagliaScelta"></span></div> 
 						<div id="alert_container">devi sceliere la taglia </div>
 
 						<div id="container_taglie">
 							<button class="buttonAddCarello buttonBuy color">
 								<span>Aggiungi al carello</span>
 							</button>
-							<button class="buttonBuy">
+							<button style="cursor: pointer;" class="buttonBuy">
 								<span>Aggiungi ai preferiti &#9825;</span>
 								<span id="dadoRecuperado"></span>
 							</button>

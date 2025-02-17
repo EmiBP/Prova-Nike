@@ -1,43 +1,30 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // 	PAG2 SLIDER SCARPI
 
+import { manipularJson } from "/js/utils.js";
+import { setDatti } from "/js/utils.js";
+import { addDattiCarrello } from "/js/utils.js";
+import { redirectPag } from "/js/utils.js";
+import { mouseoverOn } from "/js/utils.js";
+import { mostrarQuantidadeSapato } from "/js/utils.js";
 
 
+const buttonAddCarello = document.querySelector(".buttonAddCarello");
+const tagBoxTaglie = document.getElementById("quantita-select");
 
+document.addEventListener("DOMContentLoaded", function () {
+    mouseoverOn(buttonAddCarello);
+    initSliderPag2();
+    addSizesJson();
+    mostrarQuantidadeSapato(tagBoxTaglie);
+    
+});
+
+// Init SLIDER IMAGENS Scarpa
 const imgScarpaImg = document.querySelectorAll(".main_box1 img");
 let imgScarpaImg_main2 = document.querySelector(".main_box2 img");
 
-
-
-// info prodotto dentro carrello
-const prezzo = document.getElementById("prezzo");
-const prodotto = document.getElementById("prodotto");
-const taglia = document.getElementById("taglia");
-
-// info prodotto site
-const nome_prodotto = document.getElementById("nome_prodotto");
-const prezzoSite = document.getElementById("prezzoSite");
-
-
-
-
-
-window.addEventListener('load', function() {
-    
-    initSliders();
-    cambiaStyleTaglie();
-    validaCampo();
-   
-
-    
-})
-
-// SLIDER DAS IMAGENS DO SAPATO
-
-function initSliders() {
-    
-    
-    
+function initSliderPag2() {
     imgScarpaImg.forEach(element => {
         element.addEventListener("mouseover", event =>{
             let src = element.getAttribute('src');
@@ -49,7 +36,7 @@ function initSliders() {
         })
         
     });
-	
+    
     imgScarpaImg.forEach(element => {
         element.addEventListener("mouseout", event =>{
             element.style.opacity = "1";
@@ -57,113 +44,92 @@ function initSliders() {
             
         })
         
-    });
-	
-	
-    
-	
-	
-    
+    });   
 }
 
-//-------------------------------------------------------------------------------
 
-const taglieScarpi = document.querySelectorAll("#boxInfo2_taglie .taglie_button");
-const alert_container = document.getElementById("alert_container");
-const divInfoTaglia = document.querySelector("#tagliaSelected span");
-const divInfoTaglia_1 = document.getElementById("tagliaSelected");
-const divInfoTaglia_2 = document.querySelector('input[name="tagliaScelta"]');
+// nessa função to adicionando dinamicamente os tamosanhos de sapato
+function addSizesJson() {
+    let objeto = manipularJson();
+    let array_taglie;
+    
+    array_taglie = objeto.prodotti[0].taglie_disponibili;
+    console.log(array_taglie);
+    
+    const boxInfo2_taglie = document.querySelector("div#boxInfo2_taglie");
+    
+    boxInfo2_taglie.innerHTML = '';
+    array_taglie.forEach(num => {
+        console.log(num);
+        boxInfo2_taglie.innerHTML += `<button class="taglie_button" value="${num}"><span>${num}</span></button>`;
+    });
+    
+    manipulandoButtonsTaglie();
+}
 
-function cambiaStyleTaglie() {
+//--------------------------------------------------------------------------------
+// funcao que altera o style dos botões de tamanho e adiciona o valor escolhido no display abaixo, além de validar ele
+
+function manipulandoButtonsTaglie() {
+    
+    const taglieScarpi = document.querySelectorAll("#boxInfo2_taglie .taglie_button");
+    const divInfoTaglia = document.querySelector("#tagliaSelected span");
+    const divInfoTaglia_1 = document.getElementById("tagliaSelected");
+    const alert_container = document.getElementById("alert_container");
     
     taglieScarpi.forEach(element => {
         let txtContentTaglie = element.textContent;
         element.addEventListener("mouseover", event => {
-            element.style.borderColor = "black";
-            element.style.cursor = "pointer";
-            
+         element.style.borderColor = "black";
+         element.style.cursor = "pointer";
+           
         })
-        
         element.addEventListener("mouseout", event => {
+        
             element.style.borderColor = "rgb(180, 175, 175";
         })
         element.addEventListener("click", event => {
             alert_container.style.display = "none";
             divInfoTaglia_1.style.display = 'block';
             divInfoTaglia.innerHTML = `${txtContentTaglie}`;
-            divInfoTaglia_2.value = element.value ;
         });
-        
     })
-    
-    
-    
-    
 }
 
-//------------------------------------------------------------------
 
+//ENVIA DADOS AO CARRINHO
 
-const buttonAddCarello = document.querySelector(".buttonAddCarello");
-const containerCarrello = document.querySelector(".container");
-// itens capturados e sendo adicionados pelo localstorage: 
+buttonAddCarello.addEventListener("click", event => {
+    const tagliaSelected = document.getElementById("tagliaSelected").textContent;
+    const alert_container = document.getElementById("alert_container");
+    const containerCarrello = document.querySelector(".container");
+    const nomeCapturado =  document.getElementById("prodotto"); 
+    const tagliaCapturada =  document.getElementById("tagliaSceltaResponse");
+    const prezzoCapturado =  document.getElementById("prezzo");
+    const tagliaScelta =  document.getElementById("tagliaScelta").textContent;       
+    const nome_prodotto =  document.getElementById("nome_prodotto").textContent;    
+    const prezzoSite =  document.getElementById("prezzoSite").textContent;    
+    const generoScelta =  document.getElementById("genero").textContent;    
+    const quantidade =  document.getElementById("quantita-select").value;    
+    addDattiCarrello(nome_prodotto,tagliaScelta,generoScelta,quantidade, prezzoSite);
+    setDatti(tagliaCapturada, tagliaScelta);
+    setDatti(prezzoCapturado, prezzoSite);
+    setDatti(nomeCapturado, nome_prodotto);
 
-//const nome_prodotto =  document.getElementById("nome_prodotto").textContent;    
-
-function validaCampo() {
-    buttonAddCarello.addEventListener("click", event => {
-        if (divInfoTaglia.textContent.trim() === "") {
-            return; 
-        }
+    // 2 - CAPTURANDO DADOS DA PAGINA DO PRODUTO
+    
+    if (tagliaSelected.textContent === "") {
+        alert_container.style.display = "block";
         
+    } else{
+      
         containerCarrello.style.display = "block";
-        const nomeCapturado =  document.getElementById("prodotto"); 
-        const tagliaCapturada =  document.getElementById("tagliaSceltaResponse");
-        const prezzoCapturado =  document.getElementById("prezzo");
-        const tagliaScelta =  document.querySelector('input[name="tagliaScelta"]').value;       
-        const nome_prodotto =  document.getElementById("nome_prodotto").textContent;    
-        const prezzoSite =  document.getElementById("prezzoSite").textContent;    
-        const generoScelta =  document.getElementById("genero").textContent;    
-        const quantidade =  document.getElementById("quantita-select").value;    
+        redirectPag("index4.html");
+    }
     
-        // functions LocalStorage
+    // SETANDO OS DADOS NO CARRINHO SUSPENSO
 
-        setDattiPopUpCarrello(tagliaCapturada, tagliaScelta);
-        setDattiPopUpCarrello(prezzoCapturado, prezzoSite);
-        setDattiPopUpCarrello(nomeCapturado, nome_prodotto);
-
-        addDattiCarrello(nome_prodotto,tagliaScelta,generoScelta,quantidade, prezzoSite);
-        
-
-
-        // REDIRECIONAMENTO P PAGINA 4
-         setTimeout(function() {
-         window.location.href = "index4.html";
-        }, 2000);
-    });
-}
-
-
-
-// função da pagina 2, jogando os dados para o carrinho suspenso
-
-function setDattiPopUpCarrello(chave, valor) {    
-
-    chave.innerText = valor;
-
-}
-
-function addDattiCarrello(_nome, _tamanho, _genero ,_quantidade ,_prezzo ) {   
-    let map = {};
-    map.nome = _nome;
-    map.tamanho = _tamanho;
-    map.genero = _genero;
-    map.quantidade = _quantidade;
-    map.prezzo = _prezzo;
-
-    localStorage.setItem("item", JSON.stringify(map));  
-}
-
+});
 
 
 
